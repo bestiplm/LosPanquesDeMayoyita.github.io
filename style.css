@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .barra {
+    background-color: #a7861dbe;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .contenido {
+    padding-top: 65px; /* Ajusta este valor para dejar espacio para la barra */
+    /* Otros estilos para el contenido */
+  }
+  .contenedor {
+    display: flex;
+    align-items: center;
+  }
+  
+  .imagen {
+    flex: 1; /* La imagen ocupará la mitad del contenedor */
+  }
+  
+  .imagen img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .descripcion {
+    flex: 1; /* La descripción ocupará la otra mitad del contenedor */
+    padding: 0 20px; /* Ajusta el espaciado según sea necesario */
+  }
+  
+  .descripcion h2 {
+    margin-top: 0; /* Eliminar el margen superior predeterminado del título */
+  }
