@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasteles - Pastelería de Irma Gloria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .product {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .product-name {
+            color: #ff6f61;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .product-description {
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .order-button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pasteles</h1>
+        <p>Selecciona un pastel para ver más detalles</p>
+    </header>
+
+    <main>
+        <div class="product">
+            <img src="pastel1.jpg" alt="Pastel 1" onclick="openModal('pastel1Modal')">
+            <p class="product-name">Pastel de Chocolate</p>
+        </div>
+        <div class="product">
+            <img src="pastel2.jpg" alt="Pastel 2" onclick="openModal('pastel2Modal')">
+            <p class="product-name">Pastel de Fresa</p>
+        </div>
+        <!-- Agrega más productos según sea necesario -->
+
+        <div id="pastel1Modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('pastel1Modal')">&times;</span>
+                <div class="product-description">
+                    <h2>Pastel de Chocolate</h2>
+                    <img src="pastel1.jpg" alt="Pastel de Chocolate" class="product-image">
+                    <p>Descripción del pastel de chocolate. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <table>
+                        <tr>
+                            <th>Tamaño</th>
+                            <th>Precio</th>
+                        </tr>
+                        <tr>
+                            <td>Pequeño</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr>
+                            <td>Mediano</td>
+                            <td>$150</td>
+                        </tr>
+                        <tr>
+                            <td>Grande</td>
+                            <td>$200</td>
+                        </tr>
+                    </table>
+                    <a href="https://wa.me/52662245001?text=Mucho%20gusto%2C%20para%20saber%20m%C3%A1s%20de%20este%20pastel%20de%20chocolate"><button class="order-button">Pedir Cotización</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="pastel2Modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('pastel2Modal')">&times;</span>
+                <div class="product-description">
+                    <h2>Pastel de Fresa</h2>
+                    <img src="pastel2.jpg" alt="Pastel de Fresa" class="product-image">
+                    <p>Descripción del pastel de fresa. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <table>
+                        <tr>
+                            <th>Tamaño</th>
+                            <th>Precio</th>
+                        </tr>
+                        <tr>
+                            <td>Pequeño</td>
+                            <td>$120</td>
+                        </tr>
+                        <tr>
+                            <td>Mediano</td>
+                            <td>$170</td>
+                        </tr>
+                        <tr>
+                            <td>Grande</td>
+                            <td>$220</td>
+                        </tr>
+                    </table>
+                    <a href="https://wa.me/52662245001?text=Mucho%20gusto%2C%20para%20saber%20m%C3%A1s%20de%20este%20pastel%20de%20fresa"><button class="order-button">Pedir Cotización</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pastelería de Irma Gloria. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
+</body>
+</html>

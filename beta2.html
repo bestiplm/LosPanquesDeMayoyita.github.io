@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería de Irma Gloria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ff6f61;
+            font-weight: bold;
+        }
+        .category {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 200px;
+        }
+        .category h2 {
+            color: #ff6f61;
+        }
+        .product-image {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .product-description {
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .order-button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pastelería de Irma Gloria</h1>
+        <p>Los mejores postres hechos con amor</p>
+    </header>
+
+    <nav>
+        <a href="#pasteles">Pasteles</a>
+        <a href="#panques">Panqués</a>
+        <a href="#cupcakes">Cupcakes</a>
+        <a href="#cheesecakes">Cheesecakes</a>
+    </nav>
+
+    <main>
+        <section id="pasteles" class="category">
+            <h2>Pasteles</h2>
+            <img src="pastel.jpg" alt="Pastel" class="product-image" onclick="openModal('pastelModal')">
+        </section>
+
+        <section id="panques" class="category">
+            <h2>Panqués</h2>
+            <img src="panque.jpg" alt="Panqué" class="product-image" onclick="openModal('panqueModal')">
+        </section>
+
+        <section id="cupcakes" class="category">
+            <h2>Cupcakes</h2>
+            <img src="cupcake.jpg" alt="Cupcake" class="product-image" onclick="openModal('cupcakeModal')">
+        </section>
+
+        <section id="cheesecakes" class="category">
+            <h2>Cheesecakes</h2>
+            <img src="cheesecake.jpg" alt="Cheesecake" class="product-image" onclick="openModal('cheesecakeModal')">
+        </section>
+    </main>
+
+    <div id="pastelModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('pastelModal')">&times;</span>
+            <div class="product-description">
+                <h2>Pastel</h2>
+                <img src="pastel.jpg" alt="Pastel" class="product-image">
+                <p>Descripción del pastel. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <table>
+                    <tr>
+                        <th>Tamaño</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td>Pequeño</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Mediano</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>$200</td>
+                    </tr>
+                </table>
+                <a href="https://wa.me/52662245001?text=Mucho%20gusto%2C%20para%20saber%20m%C3%A1s%20de%20este%20pastel"><button class="order-button">Pedir Cotización</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="panqueModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('panqueModal')">&times;</span>
+            <div class="product-description">
+                <h2>Panqué</h2>
+                <img src="panque.jpg" alt="Panqué" class="product-image">
+                <p>Descripción del panqué. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <table>
+                    <tr>
+                        <th>Tamaño</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td>Pequeño</td>
+                        <td>$50</td>
+                    </tr>
+                    <tr>
+                        <td>Mediano</td>
+                        <td>$75</td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>$100</td>
+                    </tr>
+                </table>
+                <a href="https://wa.me/52662245001?text=Mucho%20gusto%2C%20para%20saber%20m%C3%A1s%20de%20este%20panqu%C3%A9"><button class="order-button">Pedir Cotización</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cupcakeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cupcakeModal')">&times;</span>
+            <div class="product-description">
+                <h2>Cupcake</h2>
+                <img src="cupcake.jpg" alt="Cupcake" class="product-image">
+                <p>Descripción del cupcake. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <table>
+                    <tr>
+                        <th>Tamaño</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td>Pequeño</td>
+                        <td>$20</td>
+                    </tr>
+                    <tr>
+                        <td>Mediano</td>
+                        <td>$30</td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>$40</td>
+                    </tr>
+                </table>
+                <a href="https://wa.me/52662245001?text=Mucho%20gusto%2C%20para%20saber%20m%C3%A1s%20de%20este%20cupcake"><button class="order-button">Pedir Cotización</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cheesecakeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cheesecakeModal')">&times;</span>
+            <div class="product-description">
+                <h2>Cheesecake</h2>
+                <img src="cheesecake.jpg" alt="Cheesecake" class="product-image">
+                <p>Descripción del cheesecake. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <table>
+                    <tr>
+                        <th>Tamaño</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td>Pequeño</td>
+                        <td>$70</td>
+                    </tr>
+                    <tr>
+                        <td>Mediano</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>$130</td>
+                    </tr>
+                </table>
+                <a href="https://wa.me/52662245001?text=Mucho%20gusto%2C%20para%20saber%20m%C3%A1s%20de%20este%20cheesecake"><button class="order-button">Pedir Cotización</button></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pastelería de Irma Gloria. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
+</body>
+</html>

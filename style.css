@@ -39,3 +39,34 @@ body {
   .descripcion h2 {
     margin-top: 0; /* Eliminar el margen superior predeterminado del título */
   }
+
+    /* Estilos del recuadro */
+    .recuadro {
+      width: 300px;
+      height: 50px;
+      background-color: #00ff40;
+      border: 2px solid #000000;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer; /* Cambia el cursor al pasar sobre el recuadro */
+    }
+  
+    /* Estilos del texto dentro del recuadro */
+    .recuadro p {
+      margin: 0;
+      font-size: 18px;
+      color: #000000;
+    }
+  
+    /* Estilos del enlace */
+    .recuadro a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+    }
+  
+    /* Estilos del enlace cuando está siendo clickeado */
+    .recuadro a:active {
+      color: #ff0000; /* Cambia el color al hacer clic */
+    }
